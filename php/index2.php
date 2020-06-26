@@ -1,8 +1,8 @@
 <?php
 
 $host = "localhost";
-$username = "utkarsh";
-$user_pass = "29october";
+$username = "root";
+$user_pass = "root";
 $database_in_use = "dlm";
 
 
