@@ -50,8 +50,27 @@
 
 include "index2.php";
 
-include "new_search.php";
+	$sql = "SELECT Book_ID, Book_Name, Publication, Author_Name,Available FROM books ";
+	$result = $mysqli->query($sql);
 
+	while ($row = $result->fetch_assoc()) {
+
+		echo "<tr>";
+
+		echo "<td>" . $row['Book_ID'] . "</td>";
+
+		echo "<td>" . $row['Book_Name'] . "</td>";
+
+		echo "<td>" . $row['Author_Name'] . "</td>";
+
+		echo "<td>" . $row['Publication'] . "</td>";
+
+		echo "<td>" . $row['Available'] . "</td>";
+
+		echo "</tr>";
+	}
+
+	echo "</table>";
 
 ?>
 
@@ -74,7 +93,7 @@ include "new_search.php";
 	<th style="width:20%;">Book_Name</th>
 	<th style="width:20%;">Issue_Date</th>
 	<th style="width:10%;">Return_Date</th>
-
+	
   </tr>
 
 
