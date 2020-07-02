@@ -1,0 +1,52 @@
+
+<style> 
+
+	
+h3 { position:absolute;
+	 left:600px;
+	 top:18%;
+	 font-size:18px;
+	}
+
+
+.box {	background-color:white;
+		width: 45%;
+		height: 500px;
+		border: 3px ;  
+		margin-top: 50px;
+		margin-left: 28%;
+		border-radius:10px;
+			
+	 }
+	 
+.after-box { clear: left;
+			 border: 3px solid red;      
+		   }
+
+input[type=text], input[type=password]{
+					width: 80%;
+					padding: 12px 20px;
+					margin: 8px 0;
+					box-sizing: border-box;
+					border: 2px solid #CACFD2;
+					border-radius: 4px;
+					background-color:#D7DBDD;
+				 }			  
+
+
+.btn {
+		background-color: BLACK;
+		color: white;
+		padding: 16px 10px;
+		margin: 30px 0;
+		border: none;
+		cursor: pointer;
+		width: 80%;
+		opacity: 0.9;
+		border-radius: 4px;
+	 }
+
+
+
+
+</style>

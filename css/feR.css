@@ -1,0 +1,27 @@
+<style>
+
+
+
+	.left { margin-left:100px;
+			margin-top: 30px;
+		
+		  }
+h2{ position:absolute;
+		margin-top:30px;
+		margin-left:30px;
+		font-size:80px;
+	  }
+marquee{ color:white;
+			 font-size:25px;
+			 margin-top:10px;
+		   }
+		   
+.box{	background-color:black;
+			width: 100%;
+			height: 10%;
+			margin-top:2%;
+		
+		}
+	
+
+</style>	

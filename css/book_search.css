@@ -1,0 +1,66 @@
+<style>
+
+	.img1{ position:absolute;
+		   left:380px;
+		   top:20px;
+		   z-index:-1;
+		 }
+	
+	h3{ position:absolute;
+		left:580px;
+		top:35px;
+		font-size:23px;
+	  }
+
+	.box{	background-color:black;
+			width: 100%;
+			height: 8%;
+			border: 3px ;  
+		}
+		
+	.h{ color:white;
+		font-size:25px;
+		margin-left:10px;
+	  }
+		 
+	marquee{ color:white;
+			 font-size:25px;
+			 margin-top:10px;
+		   }
+	
+
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 80%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 80%;
+  border: black;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: black;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #CD1A1A;
+}
