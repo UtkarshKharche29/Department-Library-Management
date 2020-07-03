@@ -93,6 +93,7 @@ include "index2.php";
 	<th style="width:20%;">Book_Name</th>
 	<th style="width:20%;">Issue_Date</th>
 	<th style="width:10%;">Return_Date</th>
+	<th style="width:10%;">Return</th>
 	
   </tr>
 
