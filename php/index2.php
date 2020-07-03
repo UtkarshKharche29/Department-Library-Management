@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $username = "root";
-$user_pass = "root";
+$user_pass = "";
 $database_in_use = "dlm";
 
 
