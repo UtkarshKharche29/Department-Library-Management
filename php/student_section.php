@@ -26,6 +26,7 @@
 
     echo "<td>" . $row['Return_Date'] . "</td>";
 
+    echo "<td><button style='background-color:red;color:white;padding:4px 8px 4px 8px;font-weight:200'>Return</button></td>";
 
     echo "</tr>";
   }
