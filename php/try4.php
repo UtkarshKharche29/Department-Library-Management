@@ -83,7 +83,33 @@ include "search_faculty.php";
     <input type="text" placeholder="Enter Issue Date" name="Issue_Date" value="<?php $d=strtotime("today"); echo date("Y-m-d ", $d);  ?>">
 
 	<label for="Return_Date"><b>Return Date</b></label>
-    <input type="text" placeholder="Enter Return Date" name="Return_Date" value="<?php $d=strtotime("+7 days"); echo date("Y-m-d ", $d);  ?>">
+    <input type="text" placeholder="Enter Return Date" name="Return_Date" value="<?php
+
+		$returnDate = 15;
+
+
+		$return_month = date("m",strtotime("U"));
+		$freturn_year = date("Y",strtotime("U"));
+
+
+		if($return_month >= 01 && $return_month <=05){
+
+			$freturn_month = 05;
+			$returnDate = $freturn_year."-".$freturn_month."-".$returnDate;
+
+
+		}
+		else{
+
+			$freturn_month = 12;
+			$returnDate = $freturn_year."-".$freturn_month."-".$returnDate;
+
+		}
+
+		echo $returnDate;
+
+
+  ?>">
 
 
 

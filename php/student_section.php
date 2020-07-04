@@ -32,11 +32,13 @@
     echo '<td><form action="deletebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="hidden" name="std_roll" value="' . $row['Roll_No'] . '"><button style="background-color:red;color:white;padding:4px 8px 4px 8px;font-weight:200" type="submit" value="Delete" id="btn1">Return</button></form></td>';
   }
 
+
+
+
   echo "</table>";
+
+
 
   $mysqli->close();
 
   ?>
-
-
-  </script>

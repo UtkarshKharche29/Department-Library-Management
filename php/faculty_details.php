@@ -19,7 +19,7 @@
 		</center>
 		<div class="topnav" id="myTopnav">
 			<a href="" class="active" >All Details</a>
-			<a href="search_books.php">Books</a>
+			<a href="search_books_fac.php">Books</a>
 			<a href="req_book.php">Requisition</a>
 			<a  onclick="goBack()">Log Out</a>
 			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
