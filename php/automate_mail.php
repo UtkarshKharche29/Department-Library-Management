@@ -26,7 +26,7 @@ $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 	
 	$host="localhost";
 	$username="root";
-	$password="root";
+	$password="";
 	$dbname="dlm";
 	$conn = new mysqli($host,$username,$password,$dbname) or die("Connection failed:%s\n".$conn->error);
 
