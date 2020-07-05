@@ -38,8 +38,13 @@ $result3 = $mysqli->query($sql3);
   
   echo "<td>" . $row['Available'] . "</td>";
 
-  echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
-  
+  if ($row['Available'] != 0) {
+
+    echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
+  } else {
+
+    echo '<td><input type="submit" style="background-color: #d92027" class="issuebtn" value="Issue" disabled></td>';
+  }  
   echo "</tr>";
 
   }
@@ -63,8 +68,13 @@ while($row = $result1->fetch_assoc())
  
   echo "<td>" . $row['Available'] . "</td>";
 
-  echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
-    
+  if ($row['Available'] != 0) {
+
+    echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
+  } else {
+
+    echo '<td><input type="submit" style="background-color: #d92027" class="issuebtn" value="Issue" disabled></td>';
+  }    
   echo "</tr>";
 
   }
@@ -87,6 +97,14 @@ while($row = $result1->fetch_assoc())
 
    echo "<td>" . $row['Available'] . "</td>";
 
+  if ($row['Available'] != 0) {
+
+    echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
+  } else {
+
+    echo '<td><input type="submit" style="background-color: #d92027" class="issuebtn" value="Issue" disabled></td>';
+  }
+
     echo "</tr>";
 
   }
@@ -108,9 +126,16 @@ while($row = $result1->fetch_assoc())
   echo "<td>" . $row['Publication'] . "</td>";
   
 	
-	 echo "<td>" . $row['Available'] . "</td>";
+   echo "<td>" . $row['Available'] . "</td>";
 
-  
+  if ($row['Available'] != 0) {
+
+    echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
+  } else {
+
+    echo '<td><input type="submit" style="background-color: #d92027" class="issuebtn" value="Issue" disabled></td>';
+  }
+
     echo "</tr>";
 
   }

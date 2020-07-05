@@ -36,6 +36,7 @@ $mail->AltBody = "Hello there,
     $sql = "SELECT faculty.SDRN_No, faculty.Email_ID, fac_book.Book_ID, fac_book.Book_Name, fac_book.Issue_Date, fac_book.Return_Date FROM fac_book JOIN faculty ON fac_book.SDRN_No = faculty.SDRN_No";
     
 	$result = $conn->query($sql);
+	$count = 0;
 	
 	while($row = $result->fetch_assoc()) {
 
@@ -43,11 +44,9 @@ $mail->AltBody = "Hello there,
         $returnDate = new DateTime($row['Return_Date']);
         $todaysDate = new DateTime(date('Y-m-d'));
         $daysRemaining = date_diff($todaysDate, $returnDate);
-        $count = 0;
-
+        
 		if( $daysRemaining->d <= 1 ){
 
-        
 			$username = $row["Email_ID"];
 			$mail->addAddress($username);
 			if (!$mail->send()) {
@@ -62,4 +61,7 @@ $mail->AltBody = "Hello there,
     }
     if($count === 0){
         echo 'No mail to be sent today';
-    }
+	} else {
+			echo 'No. of mails sent today: ' . $count;
+	}
+// End
