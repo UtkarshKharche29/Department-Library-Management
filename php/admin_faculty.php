@@ -26,6 +26,10 @@
 	<br>
 <center>
 
+<form action="automate_mail_fac.php">
+	<button type="submit" style="color:white;background-color: red;font-weight:300;padding:3px 6px 3px 6px;font-size: 1.1em">Send Remainder Mails</button>
+</form>
+
 <form action="try2.php">
 <input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name" style="border-color:black;"required></center>
 <center><input type="submit" class="btn" value="Search">

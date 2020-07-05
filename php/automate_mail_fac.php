@@ -8,21 +8,24 @@ $mail = new PHPMailer;
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'nigamdiksha2000@gmail.com';  //Your email               // SMTP username
+$mail->Username = 'email@gmail.com';  //Your email               // SMTP username
 $mail->Password = '1234';       //Your password                    // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('nigamdiksha2000@gmail.com', 'Test Mailer');    // Add a recipient             // Name is optional
-$mail->addReplyTo('nigamdiksha2000@gmail.com');
+$mail->setFrom('email@gmail.com', 'Library Book Return Mail');    // Add a recipient             // Name is optional
+$mail->addReplyTo('email@gmail.com');
 
 //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+$mail->Subject = 'RAIT COMPS Library Remainder';
+$mail->Body    = "Hello there,<br />This is a remainder mail to remind you that you need to return a book you have taken from RAIT <b>Computer Branch Departmental Library</b>.<br />Regards,<br />RAIT";
+$mail->AltBody = "Hello there,
+				  This is a remainder mail to remind you that you need to return a book you have taken from RAIT Computer Branch Departmental Library.
+				  Regards,
+				  RAIT";
 	
 	$host="localhost";
 	$username="root";
@@ -30,7 +33,7 @@ $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 	$dbname="dlm";
 	$conn = new mysqli($host,$username,$password,$dbname) or die("Connection failed:%s\n".$conn->error);
 
-    $sql = "SELECT students.Roll_No, students.Email_ID, stud_book.Book_ID, stud_book.Book_Name, stud_book.Issue_Date, stud_book.Return_Date FROM stud_book JOIN students ON stud_book.Roll_No = students.Roll_No";
+    $sql = "SELECT faculty.SDRN_No, faculty.Email_ID, fac_book.Book_ID, fac_book.Book_Name, fac_book.Issue_Date, fac_book.Return_Date FROM fac_book JOIN faculty ON fac_book.SDRN_No = faculty.SDRN_No";
     
 	$result = $conn->query($sql);
 	
@@ -42,7 +45,7 @@ $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         $daysRemaining = date_diff($todaysDate, $returnDate);
         $count = 0;
 
-		if( $daysRemaining->d === 1 ){
+		if( $daysRemaining->d <= 1 ){
 
         
 			$username = $row["Email_ID"];
