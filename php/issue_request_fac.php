@@ -22,9 +22,5 @@ if (!$result1) {
     
     $result2 = mysqli_query($mysqli, $sql2) or trigger_error("Query Failed! SQL: $sql2 - Error: " . mysqli_error($mysqli), E_USER_ERROR);
   
-    
-    header("Location: search_books_fac.php");
-    return;
-
 }
 ?>

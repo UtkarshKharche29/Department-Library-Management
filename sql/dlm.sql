@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 06, 2020 at 07:30 PM
+-- Generation Time: Jul 06, 2020 at 08:49 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -55,7 +55,7 @@ Book_ID`,
 `, `Author_Name`, `Publication`, `issue_status`) VALUES
 ('1', 'Computer Network', 'A.S. Tanenbaum', 'Pearson Education', 1),
 ('2', 'Data Warehousing ', 'Reema Theraja', 'Oxford University Press', 1),
-('3', 'Computer Network', 'A.S. Tanenbaum', 'Pearson Education', 0),
+('3', 'Computer Network', 'A.S. Tanenbaum', 'Pearson Education', 1),
 ('4', 'Data Warehousing ', 'Reema Theraja', 'Oxford University Press', 0),
 ('5', 'Computer Network', 'A.S. Tanenbaum', 'Pearson Education', 0),
 ('6', 'Data Warehousing ', 'Reema Theraja', 'Oxford University Press', 0),
@@ -113,16 +113,6 @@ CREATE TABLE `fac_book`
   `Return_Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `fac_book`
---
-
-INSERT INTO `fac_book` (`
-SDRN_No`,
-`Book_ID
-`, `Book_Name`, `Issue_Date`, `Return_Date`) VALUES
-('101', '2', 'Data Warehousing ', '2020-07-01', '2020-07-08');
-
 -- --------------------------------------------------------
 
 --
@@ -147,7 +137,7 @@ INSERT INTO `issue_request_fac` (`
 SDRN_No`,
 `Book_ID
 `, `Book_Name`) VALUES
-('101', '1', 'Computer Network');
+('101', '3', 'Computer Network');
 
 -- --------------------------------------------------------
 
@@ -173,7 +163,7 @@ INSERT INTO `issue_request_stud` (`
 Roll_No`,
 `Book_ID
 `, `Book_Name`) VALUES
-('18CE8017', '2', 'Data Warehousing ');
+('18CE8017', '1', 'Computer Network');
 
 -- --------------------------------------------------------
 
@@ -268,16 +258,6 @@ CREATE TABLE `stud_book`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `stud_book`
---
-
-INSERT INTO `stud_book` (`
-Roll_No`,
-`Book_ID
-`, `Book_Name`, `Issue_Date`, `Return_Date`) VALUES
-('18CE5009', '1', 'Computer Network ', '2020-07-01', '2020-07-08');
-
---
 -- Indexes for dumped tables
 --
 
@@ -303,6 +283,15 @@ ADD KEY `Book_ID`
 (`Book_ID`),
 ADD KEY `SDRN_No`
 (`SDRN_No`);
+
+--
+-- Indexes for table `issue_request_fac`
+--
+ALTER TABLE `issue_request_fac`
+ADD KEY `SDRN_No`
+(`SDRN_No`),
+ADD KEY `Book_ID`
+(`Book_ID`);
 
 --
 -- Indexes for table `issue_request_stud`
@@ -350,6 +339,17 @@ ADD CONSTRAINT `fac_book_ibfk_1` FOREIGN KEY
 ADD CONSTRAINT `fac_book_ibfk_2` FOREIGN KEY
 (`SDRN_No`) REFERENCES `faculty`
 (`SDRN_No`);
+
+--
+-- Constraints for table `issue_request_fac`
+--
+ALTER TABLE `issue_request_fac`
+ADD CONSTRAINT `issue_request_fac_ibfk_1` FOREIGN KEY
+(`SDRN_No`) REFERENCES `faculty`
+(`SDRN_No`),
+ADD CONSTRAINT `issue_request_fac_ibfk_2` FOREIGN KEY
+(`Book_ID`) REFERENCES `books`
+(`Book_ID`);
 
 --
 -- Constraints for table `issue_request_stud`
