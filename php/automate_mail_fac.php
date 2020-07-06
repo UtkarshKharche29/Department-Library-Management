@@ -50,18 +50,23 @@ $mail->AltBody = "Hello there,
 			$username = $row["Email_ID"];
 			$mail->addAddress($username);
 			if (!$mail->send()) {
-				echo 'Message could not be sent.';
-				echo 'Mailer Error: ' . $mail->ErrorInfo;
+				echo "\n";
+				echo "Message could not be sent.";
+				echo "\n";
+				echo "Mailer Error: " . $mail->ErrorInfo;
 			} else {
-				echo 'Message has been sent';
+				echo "\n";
+				echo "Message has been sent";
 			}
 		    $count++;
 		
         } 
     }
     if($count === 0){
-        echo 'No mail to be sent today';
+    	echo "\n";
+        echo "No mail to be sent today";
 	} else {
-			echo 'No. of mails sent today: ' . $count;
+			echo "\n";
+			echo "No. of mails sent today: " . $count;
 	}
 // End
