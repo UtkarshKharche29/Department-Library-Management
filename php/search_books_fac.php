@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (isset($_POST["bookid"]) && isset($_POST["issue"])) {
+	$_SESSION["bookid"] = $_POST["bookid"];
+
+	require_once "issue_request_fac.php";
+}
+?>
+
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
@@ -37,15 +47,23 @@
 	<center>
 
 		<form action="try2_fac.php">
-			<input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name" style="border-color:black;" required>
+			<input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name" style="border-color:black;">
 	</center>
 	<center><input type="submit" class="backbtn" value="Search">
+
+		<input type="submit" class="backbtn" name="back" value="Back">
 		</form>
-		<input type="submit" class="backbtn" value="Back" onclick="goBack()"></center>
+	</center>
 	<script src="../js/back.js">
 	</script>
 	<br>
 	<center>
+		<?php
+		if (isset($_SESSION["msg"])) {
+			echo $_SESSION["msg"];
+			unset($_SESSION["msg"]);
+		}
+		?>
 		<table id="myTable" border="1">
 	</center>
 	<tr class="header">
@@ -53,7 +71,6 @@
 		<th style="width:20%;">Book_Name</th>
 		<th style="width:20%;">Author_Name</th>
 		<th style="width:20%;">Publication</th>
-		<th style="width:10%;">Available</th>
 		<th style="width:10%;">Issue</th>
 	</tr>
 

@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (isset($_POST["bookid"]) && isset($_POST["issue"])) {
+	$_SESSION["bookid"] = $_POST["bookid"];
+
+	require_once "issue_request_fac.php";
+}
+
+if (isset($_GET["back"])) {
+	header("Location: faculty_details.php");
+	return;
+}
+?>
+
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
@@ -40,30 +55,38 @@
 			<input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name">
 	</center>
 	<center><input type="submit" class="btn" value="Search">
+
+		<input type="submit" class="btn" name="back" value="Back">
 		</form>
-		<input type="submit" class="btn" value="Back" onclick="goBack()"></center>
-	<script src="../js/back.js">
-	</script><br>
-
-	<center>
-		<table id="myTable" border="1">
 	</center>
-	<tr class="header">
-		<th style="width:10%;">Book_ID</th>
-		<th style="width:20%;">Book_Name</th>
-		<th style="width:20%;">Author_Name</th>
-		<th style="width:20%;">Publication</th>
-		<th style="width:10%;">Available</th>
-		<th style="width:10%;">Issue</th>
-	</tr>
-	<?php
+		<script src="../js/back.js">
+		</script>
+		<br>
 
-	include "index2.php";
+		<center>
+			<?php
+			if (isset($_SESSION["msg"])) {
+				echo $_SESSION["msg"];
+				unset($_SESSION["msg"]);
+			}
+			?>
+			<table id="myTable" border="1">
+		</center>
+		<tr class="header">
+			<th style="width:10%;">Book_ID</th>
+			<th style="width:20%;">Book_Name</th>
+			<th style="width:20%;">Author_Name</th>
+			<th style="width:20%;">Publication</th>
+			<th style="width:10%;">Issue</th>
+		</tr>
+		<?php
 
-	include "new_search_key_fac.php";
+		include "index2.php";
+
+		include "new_search_key_fac.php";
 
 
-	?>
+		?>
 
 
 

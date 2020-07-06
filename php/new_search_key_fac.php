@@ -7,16 +7,16 @@ $new_keyword=$_GET["keyword"];
 //Search the database for the particular word
 
 
-$sql = "SELECT Book_ID, Book_Name, Author_Name, Publication, Available FROM books WHERE Book_ID LIKE '%" . $new_keyword . "%'";
+$sql = "SELECT Book_ID, Book_Name, Author_Name, Publication FROM books WHERE Book_ID LIKE '%" . $new_keyword . "%' AND issue_status = 0";
 $result = $mysqli->query($sql);
 
-$sql1 = "SELECT Book_ID, Book_Name, Author_Name, Publication, Available FROM books WHERE Book_Name LIKE '%" . $new_keyword . "%'";
+$sql1 = "SELECT Book_ID, Book_Name, Author_Name, Publication FROM books WHERE Book_Name LIKE '%" . $new_keyword . "%' AND issue_status = 0";
 $result1 = $mysqli->query($sql1);
 
-$sql2 = "SELECT Book_ID, Book_Name, Author_Name, Publication, Available FROM books WHERE Publication LIKE '%" . $new_keyword . "%'";
+$sql2 = "SELECT Book_ID, Book_Name, Author_Name, Publication FROM books WHERE Publication LIKE '%" . $new_keyword . "%' AND issue_status = 0";
 $result2 = $mysqli->query($sql2);
 
-$sql3 = "SELECT Book_ID, Book_Name, Author_Name, Publication, Available FROM books WHERE Author_Name LIKE '%" . $new_keyword . "%'";
+$sql3 = "SELECT Book_ID, Book_Name, Author_Name, Publication FROM books WHERE Author_Name LIKE '%" . $new_keyword . "%' AND issue_status = 0";
 $result3 = $mysqli->query($sql3);
 
 
@@ -36,15 +36,8 @@ $result3 = $mysqli->query($sql3);
 
   echo "<td>" . $row['Publication'] . "</td>";
 
-  echo "<td>" . $row['Available'] . "</td>";
+  echo '<td><form action="search_books_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" name="issue" class="issuebtn" value="Issue"></form></td>';
 
-  if ($row['Available'] != 0) {
-
-    echo '<td><form action="issuebook_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
-  } else {
-
-    echo '<td><input type="submit" style="background-color: #d92027" class="issuebtn" value="Issue" disabled></td>';
-  }
   echo "</tr>";
 
   }
@@ -66,18 +59,8 @@ while($row = $result1->fetch_assoc())
 
   echo "<td>" . $row['Publication'] . "</td>";
 
-  echo "<td>" . $row['Available'] . "</td>";
-
-  if ($row['Available'] != 0) {
-
-    echo '<td><form action="issuebook_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
-  } else {
-
-    echo '<td><input type="submit" style="background-color: #d92027" class="issuebtn" value="Issue" disabled></td>';
-  }
-  echo "</tr>";
-
-  }
+  echo '<td><form action="search_books_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" name="issue" class="issuebtn" value="Issue"></form></td>';
+}
 
   while($row = $result2->fetch_assoc())
 
@@ -95,17 +78,10 @@ while($row = $result1->fetch_assoc())
   echo "<td>" . $row['Publication'] . "</td>";
 
 
-   echo "<td>" . $row['Available'] . "</td>";
+  echo '<td><form action="search_books_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" name="issue" class="issuebtn" value="Issue"></form></td>';
 
-  if ($row['Available'] != 0) {
 
-    echo '<td><form action="issuebook_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
-  } else {
-
-    echo '<td><input type="submit" style="background-color: #d92027" class="issuebtn" value="Issue" disabled></td>';
-  }
-
-    echo "</tr>";
+  echo "</tr>";
 
   }
 
@@ -113,38 +89,24 @@ while($row = $result1->fetch_assoc())
 
   {
 
-  echo "<tr>";
+    echo "<tr>";
 
 
-  echo "<td>" . $row['Book_ID'] . "</td>";
+    echo "<td>" . $row['Book_ID'] . "</td>";
 
-  echo "<td>" . $row['Book_Name'] . "</td>";
-
-
-  echo "<td>" . $row['Author_Name'] . "</td>";
-
-  echo "<td>" . $row['Publication'] . "</td>";
+    echo "<td>" . $row['Book_Name'] . "</td>";
 
 
-   echo "<td>" . $row['Available'] . "</td>";
+    echo "<td>" . $row['Author_Name'] . "</td>";
 
-  if ($row['Available'] != 0) {
+    echo "<td>" . $row['Publication'] . "</td>";
 
-    echo '<td><form action="issuebook_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
-  } else {
-
-    echo '<td><input type="submit" style="background-color: #d92027" class="issuebtn" value="Issue" disabled></td>';
-  }
-
+    echo '<td><form action="search_books_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" name="issue" class="issuebtn" value="Issue"></form></td>';
 
     echo "</tr>";
-
+    
   }
 
-
-
 echo "</table>";
-
-
 
 $mysqli->close();

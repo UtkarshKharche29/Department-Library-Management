@@ -4,19 +4,15 @@
 
 include "index2.php";
 
-      // username and password sent from form 
-      
-      $new_SDRN_No=$_GET["SDRN_No"];
-	  $new_password=$_GET["Password"];
-      
-      $sql = "SELECT * fac_book WHERE SDRN_No = '$new_SDRN_No'";
-      $result = $mysqli->query($sql);
-	  
+// username and password sent from form 
+
+	$new_SDRN_No = $_SESSION["sdrnNo"];
+	$new_password = $_SESSION["password"];
 	  
 	  if($new_SDRN_No==$new_password)
 	{
-		$sql1 = "SELECT * FROM fac_book WHERE SDRN_No LIKE '%" . $new_SDRN_No . "%'";
-		$result1 = $mysqli->query($sql1);
+		$sql1 = "SELECT * FROM fac_book WHERE SDRN_No = '".$new_SDRN_No."'";
+		$result1 = mysqli_query($mysqli, $sql1) or trigger_error("Query Failed! SQL: $sql1 - Error: " . mysqli_error($mysqli), E_USER_ERROR);
 		
 		
 

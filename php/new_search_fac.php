@@ -6,10 +6,8 @@ include "index2.php";
 
 //Search the database for the particular word
 
-$sql = "SELECT Book_ID, Book_Name, Publication, Author_Name,Available FROM books ";
+$sql = "SELECT Book_ID, Book_Name, Publication, Author_Name FROM books WHERE issue_status = 0";
 $result = $mysqli->query($sql);
-
-
 
 
 while ($row = $result->fetch_assoc()) {
@@ -24,24 +22,11 @@ while ($row = $result->fetch_assoc()) {
 
   echo "<td>" . $row['Publication'] . "</td>";
 
-  echo "<td>" . $row['Available'] . "</td>";
+  echo '<td><form action="search_books_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" name="issue" class="issuebtn" value="Issue"></form></td>';
 
-  if($row['Available'] != 0) {
-
-    echo '<td><form action="issuebook_fac.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
-
-  } else {
-
-    echo '<td><input type="submit" style="background-color: #d92027" class="issuebtn" value="Issue" disabled></td>';
-
-  }
-
-   echo "</tr>";
+  echo "</tr>";
 
 }
-
-
-
 
 echo "</table>";
 

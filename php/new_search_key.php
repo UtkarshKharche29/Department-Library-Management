@@ -7,13 +7,13 @@ $new_keyword=$_GET["keyword"];
 //Search the database for the particular word
 	
 
-$sql = "SELECT Book_ID, Book_Name, Author_Name, Publication, Available FROM books WHERE Book_ID LIKE '%" . $new_keyword . "%' AND issue_status = 0";
+$sql = "SELECT Book_ID, Book_Name, Author_Name, Publication FROM books WHERE Book_ID LIKE '%" . $new_keyword . "%' AND issue_status = 0";
 $result = $mysqli->query($sql);
 
-$sql1 = "SELECT Book_ID, Book_Name, Author_Name, Publication, Available FROM books WHERE Book_Name LIKE '%" . $new_keyword . "%' AND issue_status = 0";
+$sql1 = "SELECT Book_ID, Book_Name, Author_Name, Publication FROM books WHERE Book_Name LIKE '%" . $new_keyword . "%' AND issue_status = 0";
 $result1 = $mysqli->query($sql1);
 
-$sql2 = "SELECT Book_ID, Book_Name, Author_Name, Publication, Available FROM books WHERE Publication LIKE '%" . $new_keyword . "%' AND issue_status = 0";
+$sql2 = "SELECT Book_ID, Book_Name, Author_Name, Publication FROM books WHERE Publication LIKE '%" . $new_keyword . "%' AND issue_status = 0";
 $result2 = $mysqli->query($sql2);
 
 $sql3 = "SELECT Book_ID, Book_Name, Author_Name, Publication FROM books WHERE Author_Name LIKE '%" . $new_keyword . "%' AND issue_status = 0";

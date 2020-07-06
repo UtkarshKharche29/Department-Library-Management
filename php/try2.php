@@ -7,7 +7,7 @@ if (isset($_POST["bookid"]) && isset($_POST["issue"])) {
 	require_once "issue_request_stud.php";
 }
 
-if(isset($_GET["back"])) {
+if (isset($_GET["back"])) {
 	header("Location: student_details.php");
 	return;
 }
@@ -55,8 +55,10 @@ if(isset($_GET["back"])) {
 			<input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name">
 	</center>
 	<center><input type="submit" class="btn" value="Search">
+
+		<input type="submit" class="backbtn" name="back" value="Back">
 		</form>
-		<input type="submit" class="btn" value="Back" onclick="goBack()"></center>
+	</center>
 	<script src="../js/back.js">
 	</script><br>
 
