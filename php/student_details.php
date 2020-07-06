@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+$_SESSION["rollNo"] = $_GET["Roll_No"];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
