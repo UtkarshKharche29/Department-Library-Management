@@ -1,7 +1,11 @@
 <?php
 
 session_start();
-$_SESSION["rollNo"] = $_GET["Roll_No"];
+
+if(isset($_GET["Roll_No"]) && isset($_GET["Password"])) {
+	$_SESSION["rollNo"] = $_GET["Roll_No"];
+	$_SESSION["password"] = $_GET["Password"];
+}
 
 ?>
 
@@ -26,7 +30,7 @@ $_SESSION["rollNo"] = $_GET["Roll_No"];
 	<div class="topnav" id="myTopnav">
 		<a href="" class="active">All Details</a>
 		<a href="search_books.php">Books</a>
-		<a onclick="goBack()">Log Out</a>
+		<a href="logout.php">Log Out</a>
 		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 	</div>
 

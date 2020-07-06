@@ -1,13 +1,10 @@
 <?php
 session_start();
-$rollno = $_SESSION["rollNo"];
 
 if (isset($_POST["bookid"]) && isset($_POST["issue"])) {
 	$_SESSION["bookid"] = $_POST["bookid"];
 
 	require_once "issue_request_stud.php";
-
-	
 }
 ?>
 
@@ -50,11 +47,13 @@ if (isset($_POST["bookid"]) && isset($_POST["issue"])) {
 	<center>
 
 		<form action="try2.php">
-			<input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name" style="border-color:black;" required>
+			<input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name" style="border-color:black;">
 	</center>
 	<center><input type="submit" class="backbtn" value="Search">
+
+		<input type="submit" class="backbtn" name="back" value="Back">
 		</form>
-		<input type="submit" class="backbtn" value="Back" onclick="goBack()"></center>
+	</center>
 	<script src="../js/back.js">
 	</script>
 	<br>

@@ -36,7 +36,7 @@ $result3 = $mysqli->query($sql3);
  
   echo "<td>" . $row['Publication'] . "</td>";
 
-  echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
+  echo '<td><form action="search_books.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" name="issue" class="issuebtn" value="Issue"></form></td>';
   
   echo "</tr>";
 
@@ -58,10 +58,8 @@ while($row = $result1->fetch_assoc())
   echo "<td>" . $row['Author_Name'] . "</td>";
   
   echo "<td>" . $row['Publication'] . "</td>";
- 
-  echo "<td>" . $row['Available'] . "</td>";
 
-  echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
+  echo '<td><form action="search_books.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" name="issue" class="issuebtn" value="Issue"></form></td>';
   
   echo "</tr>";
 
@@ -81,9 +79,9 @@ while($row = $result1->fetch_assoc())
   echo "<td>" . $row['Author_Name'] . "</td>";
   
   echo "<td>" . $row['Publication'] . "</td>";
-  
 
-  echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
+
+  echo '<td><form action="search_books.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" name="issue" class="issuebtn" value="Issue"></form></td>';
   
 
   echo "</tr>";
@@ -105,10 +103,8 @@ while($row = $result1->fetch_assoc())
   echo "<td>" . $row['Author_Name'] . "</td>";
   
   echo "<td>" . $row['Publication'] . "</td>";
-  
-	echo "<td>" . $row['Available'] . "</td>";
 
-  echo '<td><form action="issuebook_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" class="issuebtn" value="Issue"></form></td>';
+  echo '<td><form action="search_books.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="submit" name="issue" class="issuebtn" value="Issue"></form></td>';
   
   echo "</tr>";
 

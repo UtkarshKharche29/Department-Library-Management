@@ -34,7 +34,9 @@
 		</div>
 		<br>
 		<center>
-			<input type="submit" class="backbtn" value="Back" onclick="goBack()">
+			<form action="HOMEPAGE.php" method="get">
+				<input type="submit" class="backbtn" value="Back">
+			</form>
 		</center>
 
 		<script src="../js/back.js">

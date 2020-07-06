@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (isset($_POST["bookid"]) && isset($_POST["issue"])) {
+	$_SESSION["bookid"] = $_POST["bookid"];
+
+	require_once "issue_request_stud.php";
+}
+
+if(isset($_GET["back"])) {
+	header("Location: student_details.php");
+	return;
+}
+?>
+
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
@@ -46,6 +61,12 @@
 	</script><br>
 
 	<center>
+		<?php
+		if (isset($_SESSION["msg"])) {
+			echo $_SESSION["msg"];
+			unset($_SESSION["msg"]);
+		}
+		?>
 		<table id="myTable" border="1">
 	</center>
 	<tr class="header">
@@ -53,7 +74,6 @@
 		<th style="width:20%;">Book_Name</th>
 		<th style="width:20%;">Author_Name</th>
 		<th style="width:20%;">Publication</th>
-		<th style="width:10%;">Available</th>
 		<th style="width:10%;">Issue</th>
 	</tr>
 	<?php

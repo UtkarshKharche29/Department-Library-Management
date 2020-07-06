@@ -2,11 +2,10 @@
 <?php
    
 include "index2.php";
+// username and password sent from form 
 
-      // username and password sent from form 
-      
-      $new_Roll_No=$_GET["Roll_No"];
-	  $new_password=$_GET["Password"];
+	$new_Roll_No = $_SESSION["rollNo"];
+	$new_password = $_SESSION["password"];
       
       $sql = "SELECT * stud_book WHERE Roll_No = '$new_Roll_No'";
       $result = $mysqli->query($sql);
