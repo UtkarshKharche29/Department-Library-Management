@@ -26,8 +26,16 @@
 	<br>
 <center>
 
+<input type="submit" class="btn" value="Log Out" onClick="location.href='homepage.php'">
+<br />
+<br />
+
 <form action="automate_mail_fac.php">
 	<button type="submit" style="color:white;background-color: red;font-weight:300;padding:3px 6px 3px 6px;font-size: 1.1em">Send Reminder Mails</button>
+</form>
+
+<form action="confirm_fac.php">
+	<button type="submit" style="color:white;background-color: red;font-weight:300;padding:3px 6px 3px 6px;font-size: 1.1em">Confirm Issue</button>
 </form>
 
 <form action="try2.php">
