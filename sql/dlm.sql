@@ -49,10 +49,9 @@ CREATE TABLE `books`
 -- Dumping data for table `books`
 --
 
-INSERT INTO `books` (`
-Book_ID`,
-`Book_Name
-`, `Author_Name`, `Publication`, `issue_status`) VALUES
+INSERT INTO `books` (
+`Book_ID`,
+`Book_Name`, `Author_Name`, `Publication`, `issue_status`) VALUES
 ('1', 'Computer Network', 'A.S. Tanenbaum', 'Pearson Education', 1),
 ('2', 'Data Warehousing ', 'Reema Theraja', 'Oxford University Press', 1);
 
@@ -82,10 +81,9 @@ CREATE TABLE `faculty`
 -- Dumping data for table `faculty`
 --
 
-INSERT INTO `faculty` (`
-SDRN_No`,
-`First_Name
-`, `Middle_Name`, `Last_Name`, `Email_ID`, `Contact_No`) VALUES
+INSERT INTO `faculty` (
+  `SDRN_No`,
+`First_Name`, `Middle_Name`, `Last_Name`, `Email_ID`, `Contact_No`) VALUES
 ('101', 'Apurva', 'Swapnil', 'Shinde', 'apurva.karkhanis@rait.ac.in', 9821598302),
 ('102', 'Arjun', 'Khandu', 'Kale', 'kalearjun@gmail.com', 8989771132);
 
@@ -111,10 +109,9 @@ CREATE TABLE `fac_book`
 -- Dumping data for table `fac_book`
 --
 
-INSERT INTO `fac_book` (`
-SDRN_No`,
-`Book_ID
-`, `Book_Name`, `Issue_Date`, `Return_Date`) VALUES
+INSERT INTO `fac_book` (
+  `SDRN_No`,
+`Book_ID`, `Book_Name`, `Issue_Date`, `Return_Date`) VALUES
 ('101', '2', 'Data Warehousing ', '2020-07-01', '2020-07-08');
 
 -- --------------------------------------------------------
@@ -137,10 +134,9 @@ CREATE TABLE `issue_request_stud`
 -- Dumping data for table `issue_request_stud`
 --
 
-INSERT INTO `issue_request_stud` (`
-Roll_No`,
-`Book_ID
-`, `Book_Name`) VALUES
+INSERT INTO `issue_request_stud` (
+  `Roll_No`,
+`Book_ID`, `Book_Name`) VALUES
 ('18CE8017', '1', 'Computer Network'),
 ('18CE8017', '2', 'Data Warehousing '),
 ('18CE8017', '2', 'Data Warehousing '),
@@ -181,10 +177,9 @@ UPDATE CURRENT_TIMESTAMP
 -- Dumping data for table `requested_books`
 --
 
-INSERT INTO `requested_books` (`
-SDRN_No`,
-`Faculty_Name
-`, `Book_Name`, `Author_Name`, `Publication`, `Date_Time`) VALUES
+INSERT INTO `requested_books` (
+  `SDRN_No`,
+`Faculty_Name`, `Book_Name`, `Author_Name`, `Publication`, `Date_Time`) VALUES
 ('101', 'Apurva Swapnil Shinde', 'Digital Signal Processing', 'A.Aanad Kumar', 'PHI Learning Pvt.Ltd', '2020-07-01 02:21:23'),
 ('102', 'Arjun Khandu Kale', 'Real Time Operating System ', 'Jane W.S Liu', 'Pearson ', '2020-07-01 02:24:22'),
 ('101', 'Apurva Swapnil Shinde', 'Computer g', 'reema thareja', 'xyz', '2020-07-06 03:01:07');
@@ -221,10 +216,9 @@ CREATE TABLE `students`
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`
-Roll_No`,
-`First_Name
-`, `Middle_Name`, `Last_Name`, `Email_ID`, `Contact_No`, `Year`, `Division`, `Batch`) VALUES
+INSERT INTO `students` (
+  `Roll_No`,
+`First_Name`, `Middle_Name`, `Last_Name`, `Email_ID`, `Contact_No`, `Year`, `Division`, `Batch`) VALUES
 ('18CE5006', 'Varsha', 'Sushil', 'Kedare', 'varsha.kedare2411@gmail.com', 8108307911, 'BE', 'B', 'B4'),
 ('18CE5009', 'Reema', 'Anant', 'Kharat', 'reema.ak@gmail.com', 6677885131, 'BE', 'B', 'B4'),
 ('18CE8017', 'Diksha', 'Ajaykumar', 'Nigam', 'nigamdiksha02@gmail.com', 8104148955, 'SE', 'C', 'C3');
@@ -251,10 +245,9 @@ CREATE TABLE `stud_book`
 -- Dumping data for table `stud_book`
 --
 
-INSERT INTO `stud_book` (`
-Roll_No`,
-`Book_ID
-`, `Book_Name`, `Issue_Date`, `Return_Date`) VALUES
+INSERT INTO `stud_book` (
+  `Roll_No`,
+`Book_ID`, `Book_Name`, `Issue_Date`, `Return_Date`) VALUES
 ('18CE5009', '1', 'Computer Network ', '2020-07-01', '2020-07-08'),
 ('18CE5006', '2', 'Data Warehousing ', '2020-07-01', '2020-07-08'),
 ('18CE8017', '1', 'Computer Network', '2020-06-27', '2020-07-04'),

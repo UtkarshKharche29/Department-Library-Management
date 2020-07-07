@@ -9,7 +9,7 @@ if (isset($_POST["bookid"])) {
     $sql = "DELETE FROM stud_book WHERE Roll_No='$roll_no' AND Book_ID='$bookId'";
     $result = $mysqli->query($sql);
 
-    $sql1 = "SELECT Book_ID, Book_Name, Publication, Author_Name, Available FROM books where Book_ID='$bookId'";
+    $sql1 = "SELECT Book_ID, Book_Name, Author_Name,Publication,issue_status FROM books where Book_ID='$bookId'";
     $result1 = $mysqli->query($sql1);
     while ($row = $result1->fetch_assoc()) {
 
@@ -19,11 +19,11 @@ if (isset($_POST["bookid"])) {
 
         $publication = $row['Publication'];
 
-        $available = $row['Available'];
+        $issue_status = $row['issue_status'];
     }
-    $available = $available + 1;
+    $issue_status = 0;
 
-    $sql2 = "UPDATE books SET Available=".$available. " WHERE Book_ID=". $bookId;
+    $sql2 = "UPDATE books SET issue_status=".$issue_status. " WHERE Book_ID=". $bookId;
     $result2 = $mysqli->query($sql2);
 
 }

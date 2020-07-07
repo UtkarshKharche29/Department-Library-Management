@@ -2,9 +2,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
-
 <head>
 	<title>Faculty Section</title>
 
@@ -53,7 +50,6 @@
     <th style="width:20%;">Book_Name</th>
 	<th style="width:20%;">Author_Name</th>
 	<th style="width:20%;">Publication</th>
-	<th style="width:10%;">Available</th>
 
   </tr>
 
@@ -62,8 +58,8 @@
 
 include "index2.php";
 
-	$sql = "SELECT Book_ID, Book_Name, Publication, Author_Name,Available FROM books ";
-	$result = $mysqli->query($sql);
+	$sql = "SELECT Book_ID, Book_Name, Publication, Author_Name FROM books";
+  	$result = $mysqli->query($sql);
 
 	while ($row = $result->fetch_assoc()) {
 
@@ -76,8 +72,6 @@ include "index2.php";
 		echo "<td>" . $row['Author_Name'] . "</td>";
 
 		echo "<td>" . $row['Publication'] . "</td>";
-
-		echo "<td>" . $row['Available'] . "</td>";
 
 		echo "</tr>";
 	}
