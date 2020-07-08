@@ -58,7 +58,7 @@ $mail->Subject = 'RAIT COMPS Library Issue Declined';
 
 $mail->Body    = "Hello there,<br />This is a mail to inform you that your request for book ".$Book_Name." is declined.<br />Regards,<br />RAIT";
 $mail->AltBody = "Hello there,
-                  This is a mail to inform you that your request for book ".$Book_Name." is rejected.
+                  This is a mail to inform you that your request for book ".$Book_Name." is declined.
                   Regards,
                   RAIT";
 
