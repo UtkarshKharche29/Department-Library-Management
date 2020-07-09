@@ -1,13 +1,24 @@
 <html>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
-
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <head>
 	<title>Admin Section</title>
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
 
 		<link rel="stylesheet" type="text/css" href="../css/add_book.css">
+		<style>
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: black;
+			color: white;
+
+		}
+	</style>
 </head>
 
 <body>
@@ -48,7 +59,11 @@
 			<h2>Requested Books</h2>
 		</center>
 	</div>
-
+	<div class="footer">
+		<h6><b style="margin-left: 15%">Developed By:</b> Varsha Kedare, Reema Kharat, Mayuri Kumbhar, Riya Thapliyal, Diksha Nigam, Amankumar Singh, Ritika Vanave, Utkarsh Kharache
+			<br />
+			<b style="margin-left: 35%"> Under the Guidance of:</b> Mrs.Apurva Shinde</h6>
+	</div>
 
 	</body>
 </html>

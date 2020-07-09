@@ -21,6 +21,18 @@ if(isset($_GET["Roll_No"]) && isset($_GET["Password"])) {
 	<link rel="stylesheet" type="text/css" href="../css/all_student.css">
 	<link rel="stylesheet" type="text/css" href="../css/student_info.css">
 
+	<style>
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: black;
+			color: white;
+
+		}
+	</style>
+
 </head>
 
 <body>
@@ -88,6 +100,11 @@ if(isset($_GET["Roll_No"]) && isset($_GET["Password"])) {
 	include "students_info.php";
 
 	?>
+	<div class="footer">
+		<h6><b style="margin-left: 10%">Developed By:</b> Varsha Kedare, Reema Kharat, Mayuri Kumbhar, Riya Thapliyal, Diksha Nigam, Amankumar Singh, Ritika Vanave, Utkarsh Kharache
+			<br />
+			<b style="margin-left: 10%"> Under the Guidance of:</b> Mrs.Apurva Shinde</h6>
+	</div>
 
 </body>
 
