@@ -25,9 +25,9 @@ while($row = $result->fetch_assoc())
 
 {
   $sql4 = "SELECT COUNT(Book_ID) FROM books WHERE Book_Name = '" . $row['Book_Name'] . "' AND issue_status = 0";
-  $result4 = $mysqli->query($sql1);
+  $result4 = $mysqli->query($sql4);
 
-  while ($row4 = $result1->fetch_assoc()) {
+  while ($row4 = $result4->fetch_assoc()) {
 
     if ($row4["COUNT(Book_ID)"] != 1) {
 
@@ -57,9 +57,9 @@ while($row = $result1->fetch_assoc())
 {
 
   $sql4 = "SELECT COUNT(Book_ID) FROM books WHERE Book_Name = '" . $row['Book_Name'] . "' AND issue_status = 0";
-  $result4 = $mysqli->query($sql1);
+  $result4 = $mysqli->query($sql4);
 
-  while ($row4 = $result1->fetch_assoc()) {
+  while ($row4 = $result4->fetch_assoc()) {
 
     if ($row4["COUNT(Book_ID)"] != 1) {
 
@@ -87,9 +87,9 @@ while($row = $result2->fetch_assoc())
 {
 
   $sql4 = "SELECT COUNT(Book_ID) FROM books WHERE Book_Name = '" . $row['Book_Name'] . "' AND issue_status = 0";
-  $result4 = $mysqli->query($sql1);
+  $result4 = $mysqli->query($sql4);
 
-  while ($row4 = $result1->fetch_assoc()) {
+  while ($row4 = $result4->fetch_assoc()) {
 
     if ($row4["COUNT(Book_ID)"] != 1) {
 
@@ -117,9 +117,9 @@ while($row = $result3->fetch_assoc())
 {
 
   $sql4 = "SELECT COUNT(Book_ID) FROM books WHERE Book_Name = '" . $row['Book_Name'] . "' AND issue_status = 0";
-  $result4 = $mysqli->query($sql1);
+  $result4 = $mysqli->query($sql4);
 
-  while ($row4 = $result1->fetch_assoc()) {
+  while ($row4 = $result4->fetch_assoc()) {
 
     if ($row4["COUNT(Book_ID)"] != 1) {
 

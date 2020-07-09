@@ -54,7 +54,7 @@ if (isset($_GET["back"])) {
 		<form action="try2.php">
 			<input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name">
 	</center>
-	<center><input type="submit" class="btn" value="Search">
+	<center><input type="submit" class="backbtn" value="Search">
 
 		<input type="submit" class="backbtn" name="back" value="Back">
 		</form>
