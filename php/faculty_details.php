@@ -14,11 +14,13 @@ if (isset($_GET["SDRN_No"]) && isset($_GET["Password"])) {
 <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+
 <head>
 	<title>Faculty Section</title>
 
 	<link rel="stylesheet" type="text/css" href="../css/all_faculty.css">
 	<link rel="stylesheet" type="text/css" href="../css/student_info.css">
+	<link rel="stylesheet" type="text/css" href="../css/add_book.css">
 	<style>
 		.footer {
 			position: fixed;
@@ -41,11 +43,13 @@ if (isset($_GET["SDRN_No"]) && isset($_GET["Password"])) {
 	</center>
 	<div class="topnav" id="myTopnav">
 		<a href="" class="active">All Details</a>
-		<a href="search_books_fac.php">Books</a>
+		<a href="search_books_fac.php">Request Book</a>
+		<a href="fac_issue.php">Issued Books</a>
 		<a href="req_book.php">Requisition</a>
-		<a href="logout.php">Log Out</a>
 		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 	</div>
+	<br />
+			<input style="margin-left: 47%" type="submit" class="btn" value="Log Out" onClick="location.href='homepage.php'">
 
 	<script src="../js/back.js">
 	</script>

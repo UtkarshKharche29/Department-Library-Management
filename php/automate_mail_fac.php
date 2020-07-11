@@ -45,7 +45,7 @@ $mail->AltBody = "Hello there,
         $todaysDate = new DateTime(date('Y-m-d'));
         $daysRemaining = date_diff($todaysDate, $returnDate);
         
-		if( $daysRemaining->d <= 1 ){
+		if( $daysRemaining->d <= 1 Or $daysRemaining->d >= 1 ){
 
 			$username = $row["Email_ID"];
 			$mail->addAddress($username);

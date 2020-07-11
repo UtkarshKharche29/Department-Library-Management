@@ -14,6 +14,7 @@ if(isset($_GET["Roll_No"]) && isset($_GET["Password"])) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/add_book.css">
 
 <head>
 	<title>Student Section</title>
@@ -41,11 +42,12 @@ if(isset($_GET["Roll_No"]) && isset($_GET["Password"])) {
 	</center>
 	<div class="topnav" id="myTopnav">
 		<a href="" class="active">All Details</a>
-		<a href="search_books.php">Books</a>
-		<a href="logout.php">Log Out</a>
+		<a href="search_books.php">Request Book</a>
+		<a href="stud_issue.php">Issued Books</a>
 		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 	</div>
-
+		<br />
+			<input style="margin-left: 47%" type="submit" class="btn" value="Log Out" onClick="location.href='homepage.php'">
 	<script src="../js/back.js">
 	</script>
 

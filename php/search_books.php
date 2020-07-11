@@ -40,7 +40,7 @@ if (isset($_POST["bookid"]) && isset($_POST["issue"])) {
 		<img src="../img/ICON.png">
 	</center><br>
 	<div class="box">
-		<marquee direction="lefts">Welcome To Books Section!!!!</marquee>
+		<marquee direction="lefts">Welcome To Request Books Section!!!!</marquee>
 	</div>
 	</center>
 	<br>
