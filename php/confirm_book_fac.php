@@ -3,26 +3,21 @@
 
 include "index2.php";
 
-
 require 'PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
 
-//$mail->SMTPDebug = 4;                               // Enable verbose debug output
-
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'email@gmail.com';  //Your email               // SMTP username
-$mail->Password = '123';       //Your password                    // SMTP password
+$mail->Username = 'email@gmail.com';  // Admin Email
+$mail->Password = '123';       //Admin Password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('email@gmail.com', 'RAIT COMPS DEPARTMENT LIBRARY');    // Add a recipient             // Name is optional
-$mail->addReplyTo('email@gmail.com');
+$mail->setFrom('email@gmail.com', 'RAIT COMPS DEPARTMENT LIBRARY');     // Admin Email and Optional Name
+$mail->addReplyTo('email@gmail.com');                                   // Admin Email
 
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 if (isset($_POST["bookid"])) {
     $bookId1 = $_POST["bookid"];
@@ -31,6 +26,7 @@ if (isset($_POST["bookid"])) {
 
 $mail->Subject = 'RAIT COMPS Library Issue Confirmed';
     
+    // Database Credentials
     $host="localhost";
     $username="root";
     $password="";
@@ -46,11 +42,9 @@ $mail->Subject = 'RAIT COMPS Library Issue Confirmed';
     $result4 = $mysqli->query($sql4) or die($mysqli->error);
 
     while($row3 = $result3->fetch_assoc()) {
-
             $username = $row3["Email_ID"];
     }
      while($row4 = $result4->fetch_assoc()) {
-
             $Book_Name = $row4["Book_Name"];
     }
     
@@ -62,20 +56,14 @@ $mail->AltBody = "Hello there,
                   Regards,
                   RAIT";
 
-
-
             if (!$mail->send()) {
-                echo "\n";
                 echo "Message could not be sent.";
-                echo "\n";
                 echo "Mailer Error: " . $mail->ErrorInfo;
             } else {
-                echo "\n";
                 echo "Message has been sent";
             }
 
-
-
+// If book is confirmed for faculty by admin, we delete it from issue_request_fac table and add it to fac_book table.
 if (isset($_POST["bookid"])) {
     $bookId = $_POST["bookid"];
     $SDRN_No = $_POST["fac_roll"];
@@ -92,23 +80,19 @@ $issueDate = date('Y-m-d');
 
 $returnDate = 15;
 
-
 $return_month = date("m",strtotime("U"));
 $freturn_year = date("Y",strtotime("U"));
 
-
+// If the issue month is between January to May,we set the return month May else we set return month as December.
 if($return_month >= 01 && $return_month <=05){
 
     $freturn_month = 05;
     $returnDate = $freturn_year."-".$freturn_month."-".$returnDate;
 
-
 }
 else{
-
     $freturn_month = 12;
     $returnDate = $freturn_year."-".$freturn_month."-".$returnDate;
-
 }
 
     $sql2 = "INSERT INTO fac_book (SDRN_No, Book_ID, Book_Name, Issue_Date, Return_Date) Values ('" . $SDRN_No . "'," . $bookId . ",'" . $bookName . "','" . $issueDate . "','" . $returnDate . "')";
@@ -120,6 +104,5 @@ else{
         return;
     }
 }
-
 $mysqli->close();
 ?>

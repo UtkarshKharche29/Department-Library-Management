@@ -15,16 +15,11 @@
 			width: 100%;
 			background-color: black;
 			color: white;
-
 		}
 	</style>
-
 </head>
-
 <body>
-
 	<div class="col-6 col-s-9">
-
 		<img src="../img/ICON.png">
 	</div>
 	<div class="col-6 col-s-12">
@@ -41,24 +36,18 @@
 					<a href="stud_login.php">Student</a>
 				</div>
 			</div>
-
 			<a href="about.php">About</a>
 			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 		</div>
 	</div>
-
 	<script src="../js/HOMEPAGE_1.js">
 	</script>
-
-	<br><br><br><br>
+	<br /><br /><br /><br />
 	<center>
 		<img class="mySlides" src="../img/l1.jpg" style="width:80%;margin-left:1%;height:80%">
 		<img class="mySlides" src="../img/l3.jpg" style="width:80%;margin-left:1%;height:80%">
 	</center>
-
 	<script src="../js/HOMEPAGE_2.js">
 	</script>
-
 </body>
-
 </html>

@@ -10,7 +10,6 @@
 <style>
 	.boxxx {
 		float: left;
-
 		width: 100%;
 		height: 1%;
 		background-color: #922B21;
@@ -28,7 +27,6 @@
 
 	}
 </style>
-
 <body>
 
 	<div class="col-6 col-s-9">

@@ -7,21 +7,17 @@ require 'PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
 
-//$mail->SMTPDebug = 4;                               // Enable verbose debug output
-
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'email@gmail.com';  //Your email               // SMTP username
-$mail->Password = '123';       //Your password                    // SMTP password
+$mail->Username = 'email@gmail.com';  // Admin Email
+$mail->Password = '123';       // Admin Password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('email@gmail.com', 'RAIT COMPS DEPARTMENT LIBRARY');    // Add a recipient             // Name is optional
-$mail->addReplyTo('email@gmail.com');
+$mail->setFrom('email@gmail.com', 'RAIT COMPS DEPARTMENT LIBRARY');    // Admin Email and optional Name
+$mail->addReplyTo('email@gmail.com');                                   // Admin Email
 
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 if (isset($_POST["bookid"])) {
     $bookId1 = $_POST["bookid"];
@@ -30,6 +26,7 @@ if (isset($_POST["bookid"])) {
 
 $mail->Subject = 'RAIT COMPS Library Issue Confirmed';
     
+    //Database Credentials
     $host="localhost";
     $username="root";
     $password="";
@@ -73,7 +70,7 @@ $mail->AltBody = "Hello there,
                 echo "Message has been sent";
             }
 
-
+// If book is confirmed for facultystudent by admin, we delete it from issue_request_stud table and add it to stud_book table.
 if (isset($_POST["bookid"])) {
     $bookId = $_POST["bookid"];
     $roll_no = $_POST["std_roll"];
@@ -86,6 +83,7 @@ if (isset($_POST["bookid"])) {
         $bookName = $row['Book_Name'];
     }
 
+    // We set the return date as 7 days after the issue date.
     $issueDate = date("Y-m-d");
     $returnDate = date("Y-m-d", strtotime("+7 days"));
 

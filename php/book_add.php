@@ -31,7 +31,6 @@
 	
 <?php
 
-
 include "./index2.php";
 
 include "./bookA.php";
@@ -50,9 +49,5 @@ include "./bookA.php";
 <li><?php echo "Author Name= $new_Author_Name"?></li><br>
 <li><?php echo "Publication= $new_Publication"?></li><br>
 <li><?php echo "Available= $new_Available"?></li><br>
-
-
-
 </ul>
-
 </div>

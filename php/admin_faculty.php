@@ -53,7 +53,6 @@
 
   </tr>
 
-
   <?php
 
 include "index2.php";
@@ -82,7 +81,6 @@ include "index2.php";
 
 <hr><hr>
 
-
 <form action="try4.php">
 <input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Faculty SDRN_No here.." title="Type in a name" style="border-color:black;"required></center>
 <center><input type="submit" class="btn" value="Search">
@@ -110,12 +108,7 @@ include "index2.php";
 
 include "faculty_section.php";
 
-
 ?>
-
-
-
-
 
 </body>
 </html>

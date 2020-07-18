@@ -22,28 +22,22 @@
 </style>
 <body>
 	<center>
-	<img src="../img/ICON.png">
+		<img src="../img/ICON.png">
 	</center>
 	<div class="box">
 		<marquee direction="lefts">Update Successfully!!!!</marquee>
 	</div>
 	
-	
 <?php
-
-
 include "./index2.php";
-
 include "./U_stud.php";
-
 ?>
-<br>
+<br />
 <center>
-<input type="submit" class="btn" value="Log Out" onClick="location.href='./homepage.php'">
-<input type="submit" class="btn" value="Back" onclick="goBack()"></center>
- <script src="../js/back.js">
- </script>
-
+	<input type="submit" class="btn" value="Log Out" onClick="location.href='./homepage.php'">
+	<input type="submit" class="btn" value="Back" onclick="goBack()">
+</center>
+<script src="../js/back.js"></script>
 <div class="floating"><h3>
 <ul type="circle">
 <li><?php echo "Roll No.= $new_Roll_No"?></li><br>
@@ -51,6 +45,5 @@ include "./U_stud.php";
 <li><?php echo "Book Name= $new_Book_Name"?></li><br>
 <li><?php echo "Issue Date= $new_Issue_Date"?></li><br>
 <li><?php echo "Return Date= $new_Return_Date"?></li><br>
-
 </ul>
 </div>

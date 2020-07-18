@@ -6,7 +6,6 @@
 <head>
 	<title>Admin Section</title>
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
-
 		<link rel="stylesheet" type="text/css" href="../css/add_book.css">
 		<style>
 		.footer {
@@ -20,40 +19,35 @@
 		}
 	</style>
 </head>
-
 <body>
 	<center>
-	<img src="../img/ICON.png">
+		<img src="../img/ICON.png">
 	</center>
 	<div class="box">
 		<marquee direction="lefts">Welcome To Computer Department Liabrary</marquee>
 	</div>
 	<center>
-	<br>
+	<br />
 		<input type="submit" class="btn" value="Log Out" onClick="location.href='homepage.php'">
 		<button class="btn" onclick="location.href='addbook.php'" id="update">Add Books</button>
-
 	</center>
-	<script src="../js/back.js">
-	</script>
-
+	<script src="../js/back.js"></script>
 		<div class="floating-box">
-			<center><br><br>
+			<center><br /><br />
 				<a href="admin_faculty.php">
 				<img src="../img/faculty.png" height="100" width="100"></img></a>
 				<h2>Faculty</h2>
 			</center>
 		</div>
-
 	<div class="floating-box">
-		<center><br><br>
+		<center><br /><br />
 			<a href="admin_student.php">
 			<img src="../img/student.png" height="100" width="100"></img><a/>
 			<h2>Students</h2>
 		</center>
 	</div>
 	<div class="floating-box">
-		<center><br><br>
+		<center><br /><br />
 			<a href="req_booklist.php">
 			<img src="../img/book1.png" height="100" width="100"></img><a/>
 			<h2>Requested Books</h2>
@@ -64,6 +58,5 @@
 			<br />
 			<b style="margin-left: 35%"> Under the Guidance of:</b> Mrs.Apurva Shinde</h6>
 	</div>
-
 	</body>
 </html>

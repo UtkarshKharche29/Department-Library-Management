@@ -33,9 +33,6 @@
 	<label for="Available"><b>Available Books</b></label>
     <input type="text" placeholder="Enter Availables Books" name="Available" required>
 
-
-	
-
     <button type="submit" class="registerbtn">Add Book</button>
   </div>
 

@@ -2,16 +2,12 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 <head>
 	<title>Student Login</title>
-
 <body style="background-color:#CD1A1A">
 	<link rel="stylesheet" type="text/css" href="../css/login.css">
 	<link rel="stylesheet" type="text/css" href="../css/back_button.css">
 	</head>
-
-
 	<body>
 		<div class="box">
 			<center>
@@ -26,23 +22,16 @@
 				<a href="stud_register.php">
 					<h4 style="color:green;margin-left:20%;">Click Here For Registration</h4>
 				</a>
-
 		</div>
-
-
 		</form>
 		</div>
-		<br>
+		<br />
 		<center>
 			<form action="HOMEPAGE.php" method="get">
 				<input type="submit" class="backbtn" value="Back">
 			</form>
 		</center>
-
 		<script src="../js/back.js">
 		</script>
-
-
-	</body>
-
+</body>
 </html>

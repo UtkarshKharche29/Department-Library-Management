@@ -2,14 +2,12 @@
 <html>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 <head>
 	<title>Admin Login</title>
 	<body style="background-color:#CD1A1A">
 	<link rel="stylesheet" type="text/css" href="../css/login.css">
 		<link rel="stylesheet" type="text/css" href="../css/back_button.css">
 </head>
-
 
 <body>
 	<div class="box">
@@ -34,8 +32,5 @@
 	<script src="../js/back.js">
 	</script>
 
-
-
 </body>
-
 </html>

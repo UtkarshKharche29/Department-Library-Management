@@ -3,8 +3,6 @@
 <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-
-
 <head>
 	<title>Student Section</title>
 
@@ -29,33 +27,33 @@
 <input type="submit" class="btn" value="Log Out" onClick="location.href='homepage.php'">
 <br />
 <br />
-		<form action="automate_mail_std.php">
+
+<!-- When this button is clicked,auotmatic emails are send according to the conditions mentioned in automate_mail_std.php file -->
+<form action="automate_mail_std.php">
 	<button type="submit" style="color:white;background-color: red;font-weight:300;padding:3px 6px 3px 6px;font-size: 1.1em">Send Reminder Mails</button>
 </form>
 <form action="confirm_stud.php">
 	<button type="submit" style="color:white;background-color: red;font-weight:300;padding:3px 6px 3px 6px;font-size: 1.1em">Confirm Issue</button>
 </form>
 
-		<form action="try2.php">
-			<input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name" style="border-color:black;" required>
+<form action="try2.php">
+	<input type="text" name="keyword" id="myInput" onkeyup="myFunction()" placeholder="Search Books here.." title="Type in a name" style="border-color:black;" required>
 	</center>
 	<center><input type="submit" class="btn" value="Search">
+</form>
+<input type="submit" class="btn" value="Back" onclick="goBack()"></center><br>
+<script src="../js/back.js">
+</script>
 
-		</form>
-		<input type="submit" class="btn" value="Back" onclick="goBack()"></center><br>
-	<script src="../js/back.js">
-	</script>
-
-	<center>
-		<table id="myTable" border="1">
-	</center>
-	<tr class="header">
-		<th style="width:10%;">Book_ID</th>
-		<th style="width:20%;">Book_Name</th>
-		<th style="width:20%;">Author_Name</th>
-		<th style="width:20%;">Publication</th>
-
-	</tr>
+<center>
+	<table id="myTable" border="1">
+</center>
+<tr class="header">
+	<th style="width:10%;">Book_ID</th>
+	<th style="width:20%;">Book_Name</th>
+	<th style="width:20%;">Author_Name</th>
+	<th style="width:20%;">Publication</th>
+</tr>
 
 
 	<?php
@@ -82,8 +80,6 @@
 
 	?>
 
-
-
 	<hr>
 	<hr>
 	<form action="try3.php">
@@ -107,7 +103,6 @@
 
 	</tr>
 
-
 	<?php
 
 	include "index2.php";
@@ -115,12 +110,5 @@
 	include "student_section.php";
 
 	?>
-
-
-
-
-
-
 </body>
-
 </html>

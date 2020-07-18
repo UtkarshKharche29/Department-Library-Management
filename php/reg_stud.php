@@ -23,27 +23,22 @@
 </style>
 <body>
 	<center>
-	<img src="../img/ICON.png">
+		<img src="../img/ICON.png">
 	</center>
 	<div class="box">
 		<marquee direction="lefts">Registration Done Successfully!!!!</marquee>
 	</div>
-	
-	
+
 <?php
-
-
 include "index2.php";
-
 include "studR.php";
-
 ?>
-<br><center>
-<input type="submit" class="btn" value="Sign IN" onClick="location.href='stud_login.php'">
-<input type="submit" class="btn" value="Back" onclick="goBack()"></center>
- <script src="../js/back.js">
- </script>
-
+<br />
+<center>
+	<input type="submit" class="btn" value="Sign IN" onClick="location.href='stud_login.php'">
+	<input type="submit" class="btn" value="Back" onclick="goBack()">
+</center>
+<script src="../js/back.js"></script>
 <div class="floating"><h3>
 <ul type="circle">
 <li><?php echo "Roll No.= $new_Roll_No"?></li>
@@ -56,7 +51,5 @@ include "studR.php";
 <li><?php echo "Division= $new_Division"?></li>
 <li><?php echo "Batch= $new_Batch"?></li>
 
-
 <ul>
-
 </div>

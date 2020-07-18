@@ -1,8 +1,5 @@
-
 <?php
-
 include "index2.php";
-
 if (isset($_POST["bookid"])) {
     $bookId = $_POST["bookid"];
     $roll_no = $_POST["std_roll"];
@@ -22,7 +19,7 @@ if (isset($_POST["bookid"])) {
         $issue_status = $row['issue_status'];
     }
     $issue_status = 0;
-
+    //After deleting book from stud_book we set the issue status for the book as 0 (not issued) in books table.
     $sql2 = "UPDATE books SET issue_status=".$issue_status. " WHERE Book_ID=". $bookId;
     $result2 = $mysqli->query($sql2);
 

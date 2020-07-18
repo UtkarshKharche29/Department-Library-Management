@@ -1,35 +1,29 @@
 
 <?php
-
 include "index2.php";
-
 require 'PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
 
-//$mail->SMTPDebug = 4;                               // Enable verbose debug output
-
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'email@gmail.com';  //Your email               // SMTP username
-$mail->Password = '123';       //Your password                    // SMTP password
+$mail->Username = 'email@gmail.com';  // Admin Email
+$mail->Password = '123';       // Admin Password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('email@gmail.com', 'RAIT COMPS DEPARTMENT LIBRARY');    // Add a recipient             // Name is optional
-$mail->addReplyTo('email@gmail.com');
+$mail->setFrom('email@gmail.com', 'RAIT COMPS DEPARTMENT LIBRARY');    // Admin Email and optional Name
+$mail->addReplyTo('email@gmail.com');                                 // Admin Email
 
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 if (isset($_POST["bookid"])) {
     $bookId1 = $_POST["bookid"];
     $SDRN_No1 = $_POST["fac_roll"];
 }
-
 $mail->Subject = 'RAIT COMPS Library Issue Declined';
     
+    //Database Credentials
     $host="localhost";
     $username="root";
     $password="";
@@ -45,15 +39,12 @@ $mail->Subject = 'RAIT COMPS Library Issue Declined';
     $result4 = $mysqli->query($sql4) or die($mysqli->error);
 
     while($row3 = $result3->fetch_assoc()) {
-
-            $username = $row3["Email_ID"];
+        $username = $row3["Email_ID"];
     }
      while($row4 = $result4->fetch_assoc()) {
-
-            $Book_Name = $row4["Book_Name"];
+        $Book_Name = $row4["Book_Name"];
     }
-    
-          $mail->addAddress($username);
+    $mail->addAddress($username);
 
 $mail->Body    = "Hello there,<br />This is a mail to inform you that your request for book ".$Book_Name." is declined.<br />Regards,<br />RAIT";
 $mail->AltBody = "Hello there,
@@ -61,18 +52,12 @@ $mail->AltBody = "Hello there,
                   Regards,
                   RAIT";
 
-
-
-            if (!$mail->send()) {
-                echo "\n";
-                echo "Message could not be sent.";
-                echo "\n";
-                echo "Mailer Error: " . $mail->ErrorInfo;
-            } else {
-                echo "\n";
-                echo "Message has been sent";
-            }
-
+if (!$mail->send()) {
+    echo "Message could not be sent.";
+    echo "Mailer Error: " . $mail->ErrorInfo;
+    } else {
+    echo "Message has been sent";
+}
 
 if (isset($_POST["bookid"])) {
     $bookId = $_POST["bookid"];
@@ -90,6 +75,5 @@ if (isset($_POST["bookid"])) {
         return;
     }
 }
-
 $mysqli->close();
 ?>
