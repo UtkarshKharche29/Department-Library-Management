@@ -18,6 +18,7 @@
 		<th style="width:10%;">Book ID</th>
 		<th style="width:20%;">Book Name</th>
 		<th style="width:20%;">Roll No</th>
+		<th style="width:20%;">No of books already issued</th>
 		<th style="width:10%;">Issue</th>
 		<th style="width:10%;">Reject</th>
 	</tr>
@@ -30,10 +31,16 @@
 	$result = $mysqli->query($sql);
 
 	while ($row = $result->fetch_assoc()) {
+		$sqln = "SELECT COUNT(*) FROM stud_book WHERE Roll_No = '". $row['Roll_No']."'";
+		$resultn = $mysqli->query($sqln);
+		 while ($row1 = $resultn->fetch_assoc()){
+		 	$cnt = $row1['COUNT(*)'];
+		 }
 		echo "<tr>";
 		echo "<td>" . $row['Book_ID'] . "</td>";
 		echo "<td>" . $row['Book_Name'] . "</td>";
 		echo "<td>" . $row['Roll_No'] . "</td>";
+		echo "<td>" .$cnt. "</td>";
 		echo '<td><form action="confirm_book_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="hidden" name="std_roll" value="' . $row['Roll_No'] . '"><button style="background-color:red;color:white;padding:4px 8px 4px 8px;font-weight:200" type="submit" value="Delete" id="btn1">Confirm</button></form></td>';
 		echo '<td><form action="reject_book_stud.php" method="POST"><input type="hidden" name="bookid" value="' . $row['Book_ID'] . '"><input type="hidden" name="std_roll" value="' . $row['Roll_No'] . '"><button style="background-color:red;color:white;padding:4px 8px 4px 8px;font-weight:200" type="submit" value="Delete" id="btn1">Reject</button></form></td>';
 		echo "</tr>";
