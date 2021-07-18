@@ -14,12 +14,12 @@
 		<center>
 			<img style="margin-top:5%;width:40%;" src="../img/ICON.png">
 		</center>
-		<form style="margin-left:100px;margin-top:50px;"  action="admin.php" >
-			<label for="rollno"><b>Admin ID:</b></label><br>
+		<form style="margin-left:100px;margin-top:50px;"  action="admin.php"  method="POST">
+			<label for="Admin_ID"><b>Admin ID:</b></label><br>
 			<input type="text" id="username" name="Admin_ID" color="gray" required><br>
-			<label for="pwd"><b>Password:</b></label><br>
+			<label for="password"><b>Password:</b></label><br>
 			<input type="password" id="password" name="Password" required>
-			<button type="submit" class="btn" id="submit" onclick="validate()">Sign In</button>
+			<button type="submit" class="btn" id="submit">Sign In</button>
 
 		</form>
 
@@ -28,7 +28,7 @@
 	<center>
 	<input type="submit" class="backbtn" value="Back" onclick="goBack()">
 	</center>
-
+	
 	<script src="../js/back.js">
 	</script>
 
