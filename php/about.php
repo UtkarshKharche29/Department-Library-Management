@@ -80,7 +80,7 @@
 		</p>
 
 		<div class="footer">
-			<h6><b style="margin-left:9%;">Developed By:</b> Varsha Kedare, Reema Kharat, Mayuri Kumbhar
+			<h6><b style="margin-left: 15%">Developed By:</b> Varsha Kedare, Reema Kharat, Mayuri Kumbhar, Riya Thapliyal, Diksha Nigam, Amankumar Singh, Ritika Vanave, Utkarsh Kharache
 				<b style="margin-left:25%;"> Under the Guidance of:</b> Mrs.Apurva Shinde</h6>
 
 
